@@ -747,6 +747,22 @@
     .foot-top{grid-template-columns:1fr}
     .cta .contactline{flex-direction:column;gap:16px}
   }
+
+  /* ---- menu: text-message channel + installer link (always visible) ---- */
+  body.menu-open .chat-widget{display:none!important}
+  .ic-sms{color:#e6e6dd}
+  .menu-utility{display:block;margin-top:30px;padding-top:24px;border-top:1px solid var(--line-dark)}
+  .menu-installer{display:flex;align-items:center;gap:14px;padding:12px 0;color:var(--paper);text-decoration:none}
+  .menu-installer .act-ic{width:38px;height:38px;border-radius:50%}
+  .menu-installer .act-ic svg{width:18px;height:18px}
+  .menu-installer span{display:flex;flex-direction:column;line-height:1.3}
+  .menu-installer strong{font-weight:600;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase}
+  .menu-installer em{font-style:normal;font-size:.78rem;color:var(--mute-dark);letter-spacing:.04em}
+  .menu-installer:hover .act-ic{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+  @media(max-width:1080px){
+    .menu-installer strong{font-size:.8rem;letter-spacing:.05em}
+    .menu-installer em{font-size:.72rem}
+  }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Outerhome","description":"Roofing, siding, windows, and gutters on Vashon Island, King County, Washington.","telephone":"+1-425-698-8551","email":"info@outerhome.co","areaServed":{"@type":"City","name":"Vashon Island","containedInPlace":{"@type":"AdministrativeArea","name":"King County, Washington"}},"knowsAbout":["Roofing","Siding","Windows","Gutters"],"priceRange":"$$"}
@@ -811,6 +827,10 @@
       </a>
       <span class="menu-chat-label">Or reach Eva on</span>
       <div class="menu-channels">
+        <a href="sms:+14256988551" class="menu-act">
+        <span class="act-ic ic-sms"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm3.5 5.75a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm4.5 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm4.5 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/></svg></span>
+        <span><strong>Text Message</strong><em>Send us a text</em></span>
+      </a>
         <a href="https://m.me/outerhome" class="menu-act" target="_blank" rel="noopener">
         <span class="act-ic ic-msgr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.24 2 2 6.22 2 11.92c0 2.98 1.23 5.55 3.23 7.33.17.15.27.36.28.59l.05 1.83c.02.58.62.96 1.15.73l2.04-.9c.17-.08.37-.09.55-.04 1.02.28 2.1.43 3.2.43 5.76 0 10-4.22 10-9.92S17.76 2 12 2Zm6.01 7.47-2.94 4.66c-.47.74-1.47.93-2.18.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66c.47-.74 1.47-.93 2.18-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg></span>
         <span><strong>Messenger</strong><em>Chat on Facebook</em></span>
@@ -821,6 +841,10 @@
       </a>
       </div>
       <div class="menu-utility">
+        <a href="installers.html" class="menu-installer">
+          <span class="act-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.6 2.9a1 1 0 0 1 1-1h.8a1 1 0 0 1 1 1v3.35a6.1 6.1 0 0 1 4 5.72v1.63H6.6v-1.63a6.1 6.1 0 0 1 4-5.72V2.9Z"/><path d="M3.4 15.2h17.2a1.1 1.1 0 0 1 1.1 1.1v1.2a1.1 1.1 0 0 1-1.1 1.1H3.4a1.1 1.1 0 0 1-1.1-1.1v-1.2a1.1 1.1 0 0 1 1.1-1.1Z"/></svg></span>
+          <span><strong>Become an Installer</strong><em>Subcontractors: apply to join our roster</em></span>
+        </a>
         <a href="https://outerhome.subsub.work/" class="menu-act ss-signin" target="_blank" rel="noopener">
           <span class="act-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg></span>
           <span><strong>Sign in to Outerhome</strong><em>Team and subcontractor login</em></span>
@@ -1161,7 +1185,7 @@
 
   btn.addEventListener('click',()=>{
     const open=nav.classList.toggle('open');
-    btn.classList.toggle('open',open);
+    btn.classList.toggle('open',open); document.body.classList.toggle('menu-open',open);
     document.body.style.overflow=open?'hidden':'';
     if(!open) closeAllSubs();
   });
@@ -1193,21 +1217,21 @@
 
   // close menu when any link is chosen
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    nav.classList.remove('open'); btn.classList.remove('open');
+    nav.classList.remove('open'); btn.classList.remove('open'); document.body.classList.remove('menu-open');
     document.body.style.overflow=''; closeAllSubs();
   }));
 
   // esc closes
   addEventListener('keydown',e=>{
     if(e.key==='Escape'){
-      nav.classList.remove('open'); btn.classList.remove('open');
+      nav.classList.remove('open'); btn.classList.remove('open'); document.body.classList.remove('menu-open');
       document.body.style.overflow=''; closeAllSubs();
     }
   });
 
   // reset state when crossing the breakpoint
   addEventListener('resize',()=>{
-    if(!isMobile()){ nav.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow=''; closeAllSubs(); }
+    if(!isMobile()){ nav.classList.remove('open'); btn.classList.remove('open'); document.body.classList.remove('menu-open'); document.body.style.overflow=''; closeAllSubs(); }
   });
 
 
