@@ -816,6 +816,7 @@
     .menu-installer strong{font-size:.8rem;letter-spacing:.05em}
     .menu-installer em{font-size:.72rem}
   }
+  .pt-apply{margin-top:clamp(40px,6vw,72px)}
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADkUlEQVR4nO2Xz09UVxTHv+fcN2XKIBGoYYpAHYNRQpo0BDeklv4BLcooBOIM0V1dzM6NiYt24R9gYtquDGSmwUgcK0n3JWlqbLFtmhi0tCFTpyCMBcz8YMqbd08XjxvN+CwP04TNnM2bH/ed7+eenPO971FTU5NgD4P3UrwGUAMAAMvvQmbWRKQdx7EAoKvr8O+JxCdPAaJr175sWVj4owsAlFIVEWGtta/N0U5jSETCTNpxtAKAzs6OzPj4WGZw8KPeUKi+AQBKpVLxzp1v7ieTU52ZzJ+HXBB2tBYWEXotAFeYHbPj9va2x+PjZxdPnz7ZFwwG6wGgUqnYAGBZVgAAyuVyKZ2emZuc/CqSzf7VYSqitVavAvEEUEpVjHA43LoUj48tnDkz1NvQENpnhImIlFIWADiOdkS0NiCFQjF/69bXPyWTU0eWl5+0Vef0VYEDB95aicVG50dGou81Njbu9xJ++PC3RyIi3d1Hj7kgTkVExIDk8/lnN2+mf0mlbhxbXc21+q5AInHh25GR6LvNzU0tXsKLi5nFiYlk9vbtmX4AOHXq4+/Pn48fjEQOHfYCWV/fWJueTv969ernH/oCePBgDqa0zMRERACQzS49npxMLabTM33lcrn+xXuCwbrNoaGTP547dzbS3n6wAwBERLQWrRQrAOjp6fNXgXv3ZvOmwwFgZWV1OZW6sTA9ne4tFIr7ALfLzWS8+DkUqi8MD0fvx2KjR8Lh1rdNjs3NzdLx4x+EqrU8fcCylCIi0lprZubLlz97cvfuDwOumNvVRnC7UspMTbFYapiYSA3Mzz/6+fr1L9pMDqUs5anl9WN12HZFKaUqrtjLnQwAIkKO41hmnW3bnoLV4c+tiMQVfj7LzKyVYscDhRzHsZjZ13OGTyt+LlztjEQkXiazkwOa2NVhxKwct9RahcOtS5cuXZxtaWnOGZDd5NoVABELM2vbtt+wLMuOx8dm0+mpN2Ox0YFX9YTf8HVzuVwOaK35xIn+uUTiQqinp3sAADY2nq297s59AZhRjETe2Rgejn4XjQ6+D7jOqJSylFKWiFT+dwDZDvP9ypVP+w2MCITZdTYRrf8r+XYWqc63I4BlWQFjv+YKAMzM1etE5B+vHEQk7vlBCgACAfdc8AWQyz3NBYN1dV7/AYAIhIg4n8/ntZb9Xmts21Zra+t/a+2eJ1tb9haAtpdAay8mNYAawF4D/Au5ldHJR2ErfAAAAABJRU5ErkJggg==">
   <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
@@ -954,6 +955,259 @@
       <p style="color:var(--mute);font-size:1.02rem;line-height:1.78;margin-bottom:16px">We work across Western Washington &mdash; Bellingham down to Olympia, the Seattle metro, the Eastside, the Kitsap Peninsula, and the islands.</p>
       <p style="color:var(--mute);font-size:1.02rem;line-height:1.78">If you&rsquo;re already working in those markets and looking for steadier volume, we should talk.</p>
     </div>
+  </div>
+  <div class="pt-apply reveal" id="apply">
+<!-- Subcontractor application form for Outerhome -->
+<div id="subsub-apply">
+  <form class="ss-form" novalidate>
+    <div class="ss-steps"><span class="ss-dot on"></span><span class="ss-dot"></span></div>
+
+    <div class="ss-step" data-step="1">
+      <p class="ss-lede">Tell us about your company.</p>
+      <label class="ss-f"><span>Company <b>*</b></span>
+        <input name="company" required autocomplete="organization" /></label>
+      <label class="ss-f"><span>Your name <b>*</b></span>
+        <input name="contact" required autocomplete="name" /></label>
+      <div class="ss-row">
+        <label class="ss-f"><span>Email <b>*</b></span>
+          <input name="email" type="email" required autocomplete="email" /></label>
+        <label class="ss-f"><span>Mobile</span>
+          <input name="phone" type="tel" autocomplete="tel" /></label>
+      </div>
+      <label class="ss-f"><span>Contractor license #</span>
+        <input name="license" autocapitalize="characters" />
+        <em>Optional. It speeds up approval &mdash; we check it against the state registry.</em></label>
+    </div>
+
+    <div class="ss-step" data-step="2" hidden>
+      <p class="ss-lede">What do you do, and where?</p>
+      <span class="ss-label">Trades you cover <b>*</b></span>
+      <div class="ss-chips">
+        <button type="button" class="ss-chip" data-cat="roofing">Roofing</button>
+        <button type="button" class="ss-chip" data-cat="siding">Siding</button>
+        <button type="button" class="ss-chip" data-cat="windows_doors">Windows / Doors</button>
+        <button type="button" class="ss-chip" data-cat="gutters">Gutters</button>
+        <button type="button" class="ss-chip" data-cat="soffit_fascia">Soffit / Fascia</button>
+        <button type="button" class="ss-chip" data-cat="coping">Coping</button>
+        <button type="button" class="ss-chip" data-cat="masonry">Masonry / Brick</button>
+        <button type="button" class="ss-chip" data-cat="solar">Solar</button>
+        <button type="button" class="ss-chip" data-cat="framing">Framing</button>
+        <button type="button" class="ss-chip" data-cat="concrete">Concrete</button>
+        <button type="button" class="ss-chip" data-cat="foundation">Foundation</button>
+        <button type="button" class="ss-chip" data-cat="excavation">Excavation / Grading</button>
+        <button type="button" class="ss-chip" data-cat="demolition">Demolition</button>
+        <button type="button" class="ss-chip" data-cat="electrical">Electrical</button>
+        <button type="button" class="ss-chip" data-cat="plumbing">Plumbing</button>
+        <button type="button" class="ss-chip" data-cat="hvac">HVAC</button>
+        <button type="button" class="ss-chip" data-cat="insulation">Insulation</button>
+        <button type="button" class="ss-chip" data-cat="drywall">Drywall / Sheetrock</button>
+        <button type="button" class="ss-chip" data-cat="painting">Painting</button>
+        <button type="button" class="ss-chip" data-cat="flooring">Flooring / Carpet</button>
+        <button type="button" class="ss-chip" data-cat="tile_stone">Tile / Stone</button>
+        <button type="button" class="ss-chip" data-cat="cabinets_counters">Cabinets / Countertops</button>
+        <button type="button" class="ss-chip" data-cat="trim_carpentry">Finish Carpentry</button>
+        <button type="button" class="ss-chip" data-cat="deck_fence">Deck / Fence</button>
+        <button type="button" class="ss-chip" data-cat="hardscaping">Hardscaping</button>
+        <button type="button" class="ss-chip" data-cat="landscaping">Landscaping</button>
+        <button type="button" class="ss-chip" data-cat="garage_doors">Garage Doors</button>
+        <button type="button" class="ss-chip" data-cat="restoration">Water / Fire Restoration</button>
+        <button type="button" class="ss-chip" data-cat="cleaning">Final Clean</button>
+      </div>
+      <div class="ss-row">
+        <label class="ss-f"><span>City</span>
+          <input name="city" autocomplete="address-level2" /></label>
+        <label class="ss-f"><span>ZIP</span>
+          <input name="zip" inputmode="numeric" autocomplete="postal-code" /></label>
+      </div>
+    </div>
+
+    <p class="ss-msg" role="status" aria-live="polite"></p>
+    <div class="ss-actions">
+      <button type="button" class="ss-back" hidden>Back</button>
+      <button type="button" class="ss-next">Continue</button>
+      <button type="submit" class="ss-go" hidden>Apply to work with Outerhome</button>
+    </div>
+    <noscript><a href="https://outerhome.subsub.work/?apply=1">Open the application form</a></noscript>
+  </form>
+  <div class="ss-done" role="status" aria-live="polite" hidden>
+    <svg class="ss-tick" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"
+      fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+    <h3>Submitted</h3>
+    <p class="ss-done-lede">Thanks for asking to work with us.</p>
+    <p>We have sent a confirmation to <b class="ss-done-em"></b>. Follow the link in it to
+      finish setting up your account &mdash; including your certificate of insurance,
+      your surety bond and your W-9, which we need on file before we can schedule you
+      for work.</p>
+    <p class="ss-done-sub">We look forward to working with you.</p>
+    <p class="ss-done-sig">&mdash; The Outerhome team</p>
+  </div>
+  <a class="ss-by" href="https://subsub.work" target="_blank" rel="noopener"
+    aria-label="Powered by SubSub — visit subsub.work">
+    <span>Powered by</span>
+    <svg viewBox="36 62 502 114" height="13" role="img" aria-hidden="true" fill="currentColor"><path d="M124.35,80.05l-78,36.53c-1.99,0.93-4.27-0.52-4.27-2.72V98.92c0-2.66,1.54-5.07,3.94-6.2L98.82,68c2.61-1.22,5.6-1.31,8.28-0.25l17.09,6.78C126.63,75.51,126.73,78.93,124.35,80.05z"/><path d="M43.81,156.95l78-36.53c1.99-0.93,4.27,0.52,4.27,2.72v14.93c0,2.66-1.54,5.07-3.94,6.2L69.34,169c-2.61,1.22-5.6,1.31-8.28,0.25l-17.09-6.78C41.53,161.49,41.43,158.07,43.81,156.95z"/><path d="M124.51,111.55l-57.06,26.43c-2.31,1.09-4.76,0.85-7.27-0.19l-16.4-6.7c-2.37-0.98-2.45-4.42-0.13-5.52l57.16-26.43c2.7-1.15,4.5-1.1,7.52-0.06l16.05,6.94C126.75,107.01,126.83,110.45,124.51,111.55z"/><path d="M159.95,151.25l6.62-14.87c6.31,4.18,15.27,7.03,23.52,7.03c8.35,0,11.61-2.34,11.61-5.8c0-11.3-40.53-3.05-40.53-29.53c0-12.73,10.39-23.11,31.57-23.11c9.27,0,18.84,2.14,25.86,6.21l-6.21,14.97c-6.82-3.67-13.54-5.5-19.75-5.5c-8.45,0-11.51,2.85-11.51,6.41c0,10.9,40.42,2.75,40.42,29.02c0,12.42-10.39,23.01-31.57,23.01C178.27,159.09,166.67,155.94,159.95,151.25z"/><path d="M281.36,104.58v53.14h-17.75v-5.69c-4.02,4.41-9.71,6.57-15.79,6.57c-13.04,0-22.55-7.45-22.55-24.32v-29.71h18.63v26.67c0,8.24,3.24,11.47,8.82,11.47c5.49,0,10-3.63,10-12.55v-25.59H281.36z"/><path d="M345.6,131.05c0,16.96-11.67,27.55-26.08,27.55c-6.96,0-12.16-1.96-15.69-6.18v5.29h-17.75V84.97h18.63v24.22c3.63-3.73,8.63-5.49,14.81-5.49C333.93,103.69,345.6,114.19,345.6,131.05z M326.78,131.05c0-8.04-4.9-12.55-11.18-12.55s-11.18,4.51-11.18,12.55c0,8.14,4.9,12.75,11.18,12.75S326.78,139.19,326.78,131.05z"/><path d="M345.41,151.25l6.62-14.87c6.31,4.18,15.27,7.03,23.52,7.03c8.35,0,11.61-2.34,11.61-5.8c0-11.3-40.53-3.05-40.53-29.53c0-12.73,10.39-23.11,31.57-23.11c9.27,0,18.84,2.14,25.86,6.21l-6.21,14.97c-6.82-3.67-13.54-5.5-19.75-5.5c-8.45,0-11.51,2.85-11.51,6.41c0,10.9,40.42,2.75,40.42,29.02c0,12.42-10.39,23.01-31.57,23.01C363.74,159.09,352.13,155.94,345.41,151.25z"/><path d="M466.81,104.58v53.14h-17.75v-5.69c-4.02,4.41-9.71,6.57-15.79,6.57c-13.04,0-22.55-7.45-22.55-24.32v-29.71h18.63v26.67c0,8.24,3.24,11.47,8.83,11.47c5.49,0,10-3.63,10-12.55v-25.59H466.81z"/></svg>
+  </a>
+</div>
+<style>
+#subsub-apply .ss-form{display:flex;flex-direction:column;gap:14px;max-width:460px;
+  font:inherit;color:inherit}
+/* The hidden attribute is a UA rule at the weakest specificity, and .ss-form
+   sets display:flex -- which beats it, so the form would stay on screen under
+   the confirmation. Anything toggled with [hidden] here has to say so itself.
+   (No backticks in this file's comments: it is all one template literal.) */
+#subsub-apply .ss-form[hidden],#subsub-apply .ss-done[hidden],#subsub-apply .ss-step[hidden],
+#subsub-apply .ss-actions button[hidden]{display:none}
+#subsub-apply .ss-steps{display:flex;gap:6px}
+#subsub-apply .ss-dot{width:26px;height:4px;border-radius:2px;background:#d9e0db}
+#subsub-apply .ss-dot.on{background:#000000}
+#subsub-apply .ss-step{display:flex;flex-direction:column;gap:14px}
+#subsub-apply .ss-lede{margin:0;font-size:14px;opacity:.75}
+#subsub-apply .ss-f{display:flex;flex-direction:column;gap:5px;font-size:14px}
+#subsub-apply .ss-f > span,#subsub-apply .ss-label{font-weight:600;font-size:14px}
+#subsub-apply .ss-f b,#subsub-apply .ss-label b{color:#b5442e;font-weight:600}
+#subsub-apply .ss-f em{font-size:12px;opacity:.7;font-style:normal}
+#subsub-apply .ss-row{display:flex;gap:12px;flex-wrap:wrap}
+#subsub-apply .ss-row > .ss-f{flex:1 1 150px}
+#subsub-apply input{font:inherit;font-size:15px;padding:9px 11px;
+  border:1px solid #c9d2cc;border-radius:8px;background:#fff;color:#16241d;width:100%;
+  box-sizing:border-box}
+#subsub-apply input:focus{outline:2px solid #000000;
+  outline-offset:1px;border-color:#000000}
+#subsub-apply .ss-chips{display:flex;flex-wrap:wrap;gap:7px}
+#subsub-apply .ss-chip{font:inherit;font-size:13px;padding:7px 12px;border-radius:20px;
+  border:1px solid #c9d2cc;background:#fff;color:#16241d;cursor:pointer}
+#subsub-apply .ss-chip.on{background:#000000;border-color:#000000;color:#FFFFFF}
+#subsub-apply .ss-actions{display:flex;gap:10px;align-items:center}
+#subsub-apply .ss-actions button{font:inherit;font-size:15px;font-weight:600;padding:11px 18px;
+  border:0;border-radius:8px;background:#000000;color:#FFFFFF;cursor:pointer}
+#subsub-apply .ss-back{background:transparent !important;color:inherit !important;
+  border:1px solid #c9d2cc !important;font-weight:500 !important}
+#subsub-apply .ss-actions button:hover:not(:disabled){background:#000000}
+#subsub-apply .ss-back:hover{background:#f3f5f4 !important}
+#subsub-apply .ss-actions button:disabled{opacity:.6;cursor:default}
+#subsub-apply .ss-msg{margin:0;font-size:14px;line-height:1.45}
+#subsub-apply .ss-msg.ok{color:#000000}
+#subsub-apply .ss-msg.bad{color:#b5442e}
+#subsub-apply .ss-done{max-width:460px;text-align:center;padding:30px 22px;
+  border:1px solid #c9d2cc;border-radius:12px;background:#f5faf7}
+#subsub-apply .ss-tick{display:block;margin:0 auto 14px;width:44px;height:44px;padding:7px;
+  box-sizing:border-box;border-radius:50%;background:#000000;color:#FFFFFF}
+#subsub-apply .ss-done h3{margin:0 0 10px;font:inherit;font-size:19px;font-weight:700;
+  line-height:1.3;color:#16241d}
+#subsub-apply .ss-done p{margin:0 0 10px;font-size:14.5px;line-height:1.55;color:#4a5a51}
+#subsub-apply .ss-done-lede{font-size:15.5px !important;color:#16241d !important;font-weight:600}
+#subsub-apply .ss-done-sub{margin-top:14px !important}
+#subsub-apply .ss-done-sig{margin:0 !important;font-size:13.5px !important;font-weight:600;
+  color:#16241d !important}
+#subsub-apply .ss-done b{color:#16241d}
+/* Ours, and not the customer's to remove -- the same reason the hosted pages
+   carry it. The real mark, drawn INLINE rather than fetched: a snippet that
+   loads an image is a snippet with a dependency, and one that breaks leaves a
+   broken-image icon on somebody's website. Mono, so it takes the colour of
+   whatever page it lands on instead of asserting ours. */
+#subsub-apply .ss-by{display:flex;align-items:center;justify-content:center;gap:6px;
+  margin:16px 0 0;max-width:460px;font-size:11.5px;opacity:.55;color:inherit;
+  text-decoration:none}
+#subsub-apply .ss-by:hover{opacity:.9}
+#subsub-apply .ss-by svg{height:13px;width:auto;display:block;flex:none}
+</style>
+<script>
+(function () {
+  var root = document.getElementById("subsub-apply");
+  var form = root.querySelector(".ss-form");
+  var msg = root.querySelector(".ss-msg");
+  var done = root.querySelector(".ss-done");
+  var steps = root.querySelectorAll(".ss-step");
+  var dots = root.querySelectorAll(".ss-dot");
+  var back = root.querySelector(".ss-back");
+  var next = root.querySelector(".ss-next");
+  var go = root.querySelector(".ss-go");
+  var at = 1;
+
+  root.querySelectorAll(".ss-chip").forEach(function (b) {
+    b.addEventListener("click", function () {
+      b.classList.toggle("on");
+      b.setAttribute("aria-pressed", b.classList.contains("on") ? "true" : "false");
+    });
+  });
+  function chosen() {
+    return [].slice.call(root.querySelectorAll(".ss-chip.on"))
+      .map(function (b) { return b.getAttribute("data-cat"); });
+  }
+  function show(n) {
+    at = n;
+    for (var i = 0; i < steps.length; i++) steps[i].hidden = (i + 1) !== n;
+    for (var j = 0; j < dots.length; j++) {
+      if (j < n) dots[j].classList.add("on"); else dots[j].classList.remove("on");
+    }
+    back.hidden = n === 1;
+    next.hidden = n === steps.length;
+    go.hidden = n !== steps.length;
+    msg.className = "ss-msg"; msg.textContent = "";
+  }
+  // Said on the step it is about. Walking somebody to the end and then
+  // telling them the first box was wrong is how a form gets abandoned.
+  function trouble(n) {
+    var d = new FormData(form);
+    if (n === 1) {
+      if (!d.get("company") || !d.get("contact") || !d.get("email")) {
+        return "Company, your name and email are needed.";
+      }
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(d.get("email")))) {
+        return "That email address doesn't look right.";
+      }
+      return null;
+    }
+    if (!chosen().length) return "Pick at least one trade.";
+    return null;
+  }
+  next.addEventListener("click", function () {
+    var bad = trouble(at);
+    if (bad) { msg.className = "ss-msg bad"; msg.textContent = bad; return; }
+    show(at + 1);
+  });
+  back.addEventListener("click", function () { show(at - 1); });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var bad = trouble(1) || trouble(2);
+    if (bad) { msg.className = "ss-msg bad"; msg.textContent = bad; return; }
+    var d = new FormData(form);
+    go.disabled = true; msg.className = "ss-msg"; msg.textContent = "Sending\u2026";
+    fetch("https://api.subsub.work/api/apply/outerhome", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        company: d.get("company"), contact: d.get("contact"),
+        email: d.get("email"), phone: d.get("phone") || null,
+        license: d.get("license") || null,
+        city: d.get("city") || null, zip: d.get("zip") || null,
+        categories: chosen(), notifyEmail: true
+      })
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (body) {
+        if (!r.ok) throw body;
+        // The form is REPLACED, not reset. A blank form under "we got it"
+        // reads as an invitation to send it again, which is how an account
+        // ends up with the same applicant three times.
+        var em = root.querySelector(".ss-done-em");
+        if (em) em.textContent = String(d.get("email") || "");
+        form.hidden = true;
+        done.hidden = false;
+        if (done.scrollIntoView) done.scrollIntoView({ block: "nearest" });
+      });
+    }).catch(function (err) {
+      msg.className = "ss-msg bad";
+      msg.textContent = err && err.error === "invalid_email"
+        ? "That email address doesn't look right."
+        : err && err.error === "rate_limited"
+          ? "Too many applications from here just now. Try again shortly."
+          : "That didn't send. Please try again in a moment.";
+    }).then(function () { go.disabled = false; });
+  });
+
+  show(1);
+})();
+</script>
   </div>
 </section>
 
